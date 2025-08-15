@@ -1,71 +1,49 @@
 # Mini Projet: Data Processing - Data Viz
-## Description du Projet
-Ce projet vise à analyser des données géographiques de lieux du Burkina Faso en utilisant les données open source de GeoNames. Il inclut le téléchargement automatique des données, leur traitement, filtrage et visualisation sous différents formats.
-## Objectifs
 
-Télécharger et traiter les données géographiques du Burkina Faso
-Filtrer et analyser les localités selon différents critères
-Créer des exports structurés (CSV, Excel) pour faciliter l'utilisation des données
-Effectuer des recherches spécifiques sur les localités
+## Description
+Ce projet vise à analyser des données géographiques du Burkina Faso, en se concentrant sur le téléchargement, le prétraitement, l'exploration et la visualisation des données de localités.
 
-## Installation et Utilisation
+## Étapes du Projet
 
-Cloner ou télécharger le projet
-bashgit clone [url-du-repository]
-cd burkina-data-analysis
+1. **Identification du code ISO**  
+   - Code ISO du Burkina Faso : `BF`.
 
-Installer les dépendances
-bashpip install -r requirements.txt
+2. **Téléchargement des données**  
+   - Source : [GeoNames](https://download.geonames.org/export/dump/BF.zip).  
+   - Fichier extrait : `BF.txt`.
 
-Exécuter le notebook
-bashjupyter notebook Data_processing_projet.ipynb
+3. **Prétraitement et filtrage**  
+   - Colonnes conservées :  
+     - `ID` (identifiant)  
+     - `location_name` (nom du lieu)  
+     - `lat` (latitude)  
+     - `long` (longitude).  
+   - Sauvegarde : `burkina_location.csv`.
 
+4. **Exploration des données**  
+   - Recherche des localités contenant "Gounghin" (10 résultats).  
+   - Filtrage des localités dont le nom commence par A à P (8306 résultats).  
+   - Calcul des coordonnées minimales :  
+     - Latitude minimale : `5.2161` (Komoé).  
+     - Longitude minimale : `-5.6597` (Banifing).  
+   - Filtrage des lieux avec `lat >= 11` et `long <= 0.5` (9466 résultats).
 
-## Fonctionnalités
-1. Téléchargement automatique des données
+5. **Création d'un fichier Excel**  
+   - Fichier généré : `mini_projet.xlsx`.  
+   - Feuilles incluses :  
+     - `Gounghin` : 10 lignes.  
+     - `A_to_P` : 8306 lignes.
 
-Source : GeoNames.org
-Pays : Burkina Faso (Code ISO: BF)
-Format : Fichier texte tabulé (TSV)
-Contenu : 8306 localités avec coordonnées géographiques
+## Fichiers Générés
+- `burkina_location.csv` : Données filtrées des localités.  
+- `gounghin.csv` : Résultats de la recherche "Gounghin".  
+- `mini_projet.xlsx` : Fichier Excel contenant les feuilles de travail.  
 
-2. Traitement des données
+## Technologies Utilisées
+- Python  
+- Pandas  
+- OpenPyXL  
+- GeoNames API  
 
-Colonnes extraites :
-
-ID : Identifiant unique de la localité
-location_name : Nom de la localité
-lat : Latitude
-long : Longitude
-
-
-
-3. Analyses et filtres disponibles
-Recherche spécifique
-
-Localités "Gounghin" : Recherche de tous les lieux contenant "Gounghin"
-Résultats : 10 localités trouvées
-
-Filtrage alphabétique
-
-Critère : Localités dont le nom commence par les lettres A à P
-Résultats : 8,306 localités sur 11,958 au total (69.5%)
-
-
-## Fichiers générés
-Fichiers CSV
-
-burkina_location.csv : Dataset complet des localités
-gounghin.csv : Localités contenant "Gounghin"
-
-Fichier Excel
-
-mini_projet.xlsx avec deux feuilles :
-
-Feuille "Gounghin" : 10 lignes de données Gounghin
-Feuille "A_to_P" : 8,306 lignes des localités A-P
-
-
-Dernière mise à jour : août 2025
-Version : 1.0
-Auteur : [KOALA Valentin]
+## Auteur
+KOALA Valentin
