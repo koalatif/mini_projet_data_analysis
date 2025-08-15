@@ -20,7 +20,8 @@ Ce projet vise à analyser des données géographiques du Burkina Faso, en se co
      - `long` (longitude).  
    - Sauvegarde : `burkina_location.csv`.
 
-4. **Exploration des données**  
+4. **Exploration des données**
+   - Au total: 11958 localités du Burkina Faso   
    - Recherche des localités contenant "Gounghin" (10 résultats).  
    - Filtrage des localités dont le nom commence par A à P (8306 résultats).  
    - Calcul des coordonnées minimales :  
@@ -28,7 +29,7 @@ Ce projet vise à analyser des données géographiques du Burkina Faso, en se co
      - Longitude minimale : `-5.6597` (Banifing).  
    - Filtrage des lieux avec `lat >= 11` et `long <= 0.5` (9466 résultats).
 
-5. **Création d'un fichier Excel**  
+6. **Création d'un fichier Excel**  
    - Fichier généré : `mini_projet.xlsx`.  
    - Feuilles incluses :  
      - `Gounghin` : 10 lignes.  
